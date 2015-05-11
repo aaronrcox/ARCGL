@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Emscripten">
+      <Configuration>Debug</Configuration>
+      <Platform>Emscripten</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Emscripten">
+      <Configuration>Release</Configuration>
+      <Platform>Emscripten</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{D146287D-3917-499B-8B34-FCE308DA3F50}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>ARCGLTests</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)Compiled\$(Platform)-$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir>$(SolutionDir)CompiledJunk\$(ProjectName)\$(Platform)-$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)Compiled\$(Platform)-$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir>$(SolutionDir)CompiledJunk\$(ProjectName)\$(Platform)-$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Emscripten'">
+    <OutDir>$(SolutionDir)Compiled\$(Platform)-$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir>$(SolutionDir)CompiledJunk\$(ProjectName)\$(Platform)-$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Emscripten'">
+    <OutDir>$(SolutionDir)Compiled\$(Platform)-$(Configuration)\$(ProjectName)\</OutDir>
+    <IntDir>$(SolutionDir)CompiledJunk\$(ProjectName)\$(Platform)-$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.\inc\;$(SolutionDir)Libs\Win32\SDL-1.2.15\include\;$(SolutionDir)Libs\Win32\glew\include\;$(SolutionDir)Libs\Win32\SDL_mixer-1.2.12\include\;$(SolutionDir)ARCGLFramework\inc\</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolutionDir)Libs\Win32/SDL-1.2.15\lib\x86\;$(SolutionDir)Libs\Win32\glew\lib\Release\Win32\;$(SolutionDir)Libs\Win32\SDL_mixer-1.2.12\lib\x86\;$(SolutionDir)Compiled\Win32-Debug\ARCGLFramework\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>ARCGLFramework.lib;OpenGL32.lib;glew32s.lib;SDL_mixer.lib;SDL.lib;SDLmain.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PreBuildEvent>
+      <Command>Robocopy "$(ProjectDir)Assets" "$(SolutionDir)Compiled\bin\Assets" &gt; log:nul /MIR </Command>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>.\inc\;$(SolutionDir)Libs\Win32\SDL-1.2.15\include\;$(SolutionDir)Libs\Win32\glew\include\;$(SolutionDir)Libs\Win32\SDL_mixer-1.2.12\include\;$(SolutionDir)ARCGLFramework\inc\</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>$(SolutionDir)Libs\Win32/SDL-1.2.15\lib\x86\;$(SolutionDir)Libs\Win32\glew\lib\Release\Win32\;$(SolutionDir)Libs\Win32\SDL_mixer-1.2.12\lib\x86\;$(SolutionDir)Compiled\Win32-Release\ARCGLFramework\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>ARCGLFramework.lib;OpenGL32.lib;glew32s.lib;SDL_mixer.lib;SDL.lib;SDLmain.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PreBuildEvent>
+      <Command>Robocopy "$(ProjectDir)Assets" "$(SolutionDir)Compiled\bin\Assets" &gt; log:nul /MIR </Command>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Emscripten'">
+    <Link>
+      <AdditionalOptions>--preload-file $(SolutionDir)Compiled/bin/Assets/@/Assets/ %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalLibraryDirectories>
+      </AdditionalLibraryDirectories>
+      <AdditionalDependencies>$(SolutionDir)Compiled\Emscripten-Release\ARCGLFramework\ARCGLFramework.bc;</AdditionalDependencies>
+      <JsLibrary>
+      </JsLibrary>
+    </Link>
+    <ClCompile>
+      <AdditionalIncludeDirectories>.\inc\;$(SolutionDir)ARCGLFramework\inc\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <PreBuildEvent>
+      <Command>Robocopy "$(ProjectDir)Assets" "$(SolutionDir)Compiled\bin\Assets" &gt; log:nul /MIR </Command>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Emscripten'">
+    <Link>
+      <AdditionalOptions>--preload-file $(SolutionDir)Compiled/bin/Assets/@/Assets/ %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>$(SolutionDir)Compiled\Emscripten-Debug\ARCGLFramework\ARCGLFramework.bc;</AdditionalDependencies>
+    </Link>
+    <ClCompile>
+      <AdditionalIncludeDirectories>.\inc\;$(SolutionDir)ARCGLFramework\inc\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <PreBuildEvent>
+      <Command>Robocopy "$(ProjectDir)Assets" "$(SolutionDir)Compiled\bin\Assets" &gt; log:nul /MIR </Command>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Game.cpp" />
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\TestSelector.cpp" />
+    <ClCompile Include="src\Test_KeyboardInput.cpp" />
+    <ClCompile Include="src\Test_MouseInput.cpp" />
+    <ClCompile Include="src\Test_SoundEffects.cpp" />
+    <ClCompile Include="src\Test_Spritebatch _FillRate.cpp" />
+    <ClCompile Include="src\Test_Spritebatch.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="inc\Game1.h" />
+    <ClInclude Include="inc\TestSelectorState.h" />
+    <ClInclude Include="inc\Test_KeyboardInput.h" />
+    <ClInclude Include="inc\Test_MouseInput.h" />
+    <ClInclude Include="inc\Test_SoundEffects.h" />
+    <ClInclude Include="inc\Test_Spritebatch.h" />
+    <ClInclude Include="inc\Test_Spritebatch_FillRate.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

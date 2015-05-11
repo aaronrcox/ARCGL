@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\ARCGL">
+      <UniqueIdentifier>{26ab2578-c77d-4a18-9e12-22a59a81cbd2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ARCGL">
+      <UniqueIdentifier>{fefc56ec-7b95-4375-adab-15cf2381e528}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\ARCGL\Application.cpp">
+      <Filter>Source Files\ARCGL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ARCGL\lodepng.cpp">
+      <Filter>Source Files\ARCGL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ARCGL\SpriteBatch.cpp">
+      <Filter>Source Files\ARCGL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ARCGL\SpriteBatch_Immediate.cpp">
+      <Filter>Source Files\ARCGL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ARCGL\Texture.cpp">
+      <Filter>Source Files\ARCGL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ARCGL\SpriteBatch_GL3.cpp">
+      <Filter>Source Files\ARCGL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ARCGL\Input.cpp">
+      <Filter>Source Files\ARCGL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ARCGL\Font.cpp">
+      <Filter>Source Files\ARCGL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ARCGL\Audio.cpp">
+      <Filter>Source Files\ARCGL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ARCGL\RenderTexture.cpp">
+      <Filter>Source Files\ARCGL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ARCGL\GameStateManager.cpp">
+      <Filter>Source Files\ARCGL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ARCGL\GameStateTransition.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="inc\ARCGL\Application.h">
+      <Filter>Header Files\ARCGL</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\ARCGL\lodepng.h">
+      <Filter>Header Files\ARCGL</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\ARCGL\SpriteBatch.h">
+      <Filter>Header Files\ARCGL</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\ARCGL\SpriteBatch_Immediate.h">
+      <Filter>Header Files\ARCGL</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\ARCGL\SpriteBatch_GL3.h">
+      <Filter>Header Files\ARCGL</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\ARCGL\Input.h">
+      <Filter>Header Files\ARCGL</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\ARCGL\Font.h">
+      <Filter>Header Files\ARCGL</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\ARCGL\Texture.h">
+      <Filter>Header Files\ARCGL</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\ARCGL\Audio.h">
+      <Filter>Header Files\ARCGL</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\ARCGL\RenderTexture.h">
+      <Filter>Header Files\ARCGL</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\ARCGL\GameStateManager.h">
+      <Filter>Header Files\ARCGL</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\ARCGL.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\ARCGL\IGameState.h">
+      <Filter>Header Files\ARCGL</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\ARCGL_Classes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\ARCGL\GameStateTransition.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
