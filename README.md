@@ -2,7 +2,7 @@
 A Simple 2D C++ OpenGL Framework. <br>
 The Overall structure and usage is inspired by C#'s XNA framework.
 
-This project is fairly old now, initially created in 2012
+This project is fairly old and very primitive. initially created in 2012
 
 You can see a collection of demos and tests here:<br>
 http://aaronrcox.github.io/ARCGL
