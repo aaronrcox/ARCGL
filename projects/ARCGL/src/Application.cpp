@@ -19,7 +19,7 @@ Application::Application(int windowWidth, int windowHeight, const char *windowTi
 	// initialise SDL
 	SDL_Init(SDL_INIT_VIDEO);
 
-	SDL_GL_SetAttribute(SDL_GL_SWAP_CONTROL, 0);
+	//SDL_GL_SetAttribute(SDL_GL_SWAP_CONTROL, 0);
 	
 	// Build the game window
 	SDL_SetVideoMode(m_windowWidth, m_windowHeight, 0, SDL_OPENGL | SDL_HWSURFACE | SDL_DOUBLEBUF);
